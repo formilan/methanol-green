@@ -18,22 +18,18 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+    // For static export (GitHub Pages), use mailto fallback
+    const subject = encodeURIComponent(`New Contact: ${formData.interest || "General Inquiry"} - ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || "Not provided"}\nInterest: ${formData.interest || "Not specified"}\n\nMessage:\n${formData.message}`
+    );
+    window.location.href = `mailto:info@methanol.green?subject=${subject}&body=${body}`;
 
-      if (response.ok) {
-        setIsSubmitted(true);
-        setFormData({ name: "", email: "", company: "", message: "", interest: "" });
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    } finally {
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", company: "", message: "", interest: "" });
       setIsSubmitting(false);
-    }
+    }, 1000);
   };
 
   return (
