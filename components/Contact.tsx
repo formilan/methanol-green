@@ -72,7 +72,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-500">Location</div>
-                    <div className="font-medium">Milan, Italy / Estonia EU</div>
+                    <div className="font-medium">Milan, Italy</div>
                   </div>
                 </div>
               </div>

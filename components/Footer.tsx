@@ -20,7 +20,7 @@ export default function Footer() {
               Helping shipowners navigate the transition to sustainable fuels.
             </p>
             <p className="text-sm text-gray-500">
-              EU-based company | Estonia e-Residency | Milan domicile
+              Milan, Italy
             </p>
           </div>
 
@@ -64,7 +64,6 @@ export default function Footer() {
                 </a>
               </li>
               <li>Milan, Italy</li>
-              <li>Estonia, EU</li>
             </ul>
           </div>
         </div>

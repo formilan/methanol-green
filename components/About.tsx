@@ -23,9 +23,9 @@ const credentials = [
   },
   {
     icon: Building2,
-    title: "EU Established",
+    title: "Milan Based",
     description:
-      "Estonia e-Residency company since 2019, domiciled in Milan. Full EU compliance and regulatory alignment for seamless business operations.",
+      "Strategically located in Milan, Italy's business and financial hub, with direct access to major European ports and shipping routes.",
   },
 ];
 
@@ -54,11 +54,11 @@ export default function About() {
             <div className="flex flex-wrap gap-6">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                  <span className="text-green-600 font-bold">EU</span>
+                  <span className="text-green-600 font-bold">IT</span>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">EU Based</div>
-                  <div className="text-sm text-gray-500">Estonia & Italy</div>
+                  <div className="font-semibold text-gray-900">Milan Based</div>
+                  <div className="text-sm text-gray-500">Italy</div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
