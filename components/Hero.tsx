@@ -17,7 +17,7 @@ export default function Hero() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 rounded-full text-green-700 text-sm font-medium">
               <Leaf className="w-4 h-4" />
-              FuelEU Maritime Ready
+              FuelEU Maritime Compliant
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
@@ -51,7 +51,7 @@ export default function Hero() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-green-600">2025</div>
-                  <div className="text-sm text-gray-500">FuelEU Maritime</div>
+                  <div className="text-sm text-gray-500">FuelEU Active</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-green-600">EU</div>

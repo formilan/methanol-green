@@ -5,17 +5,17 @@ import { Calendar, TrendingUp, AlertCircle, CheckCircle } from "lucide-react";
 const timeline = [
   {
     year: "2025",
-    title: "FuelEU Maritime Starts",
+    title: "FuelEU Maritime Active",
     description:
-      "GHG intensity reduction requirements begin. Ships must reduce emissions by 2% compared to 2020 baseline.",
-    status: "upcoming",
+      "GHG intensity reduction requirements now in force. Ships must reduce emissions by 2% compared to 2020 baseline.",
+    status: "active",
   },
   {
     year: "2030",
     title: "6% Reduction Target",
     description:
       "Stricter requirements demand significant green fuel adoption. Early movers gain competitive advantage.",
-    status: "future",
+    status: "upcoming",
   },
   {
     year: "2035",
@@ -38,15 +38,15 @@ export default function Market() {
     <section id="market" className="py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 rounded-full text-amber-700 text-sm font-medium mb-4">
-            <AlertCircle className="w-4 h-4" />
-            Regulation Starting January 2025
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 rounded-full text-green-700 text-sm font-medium mb-4">
+            <CheckCircle className="w-4 h-4" />
+            FuelEU Maritime Now in Force
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             FuelEU Maritime Timeline
           </h2>
           <p className="text-xl text-gray-600">
-            The clock is ticking. Position your fleet for the new regulatory landscape.
+            Compliance is mandatory. Secure your green methanol supply now.
           </p>
         </div>
 
@@ -67,22 +67,29 @@ export default function Market() {
                 <div className={`w-full md:w-5/12 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}>
                   <div
                     className={`p-6 rounded-2xl ${
-                      item.status === "upcoming"
+                      item.status === "active"
                         ? "bg-green-50 border-2 border-green-500"
+                        : item.status === "upcoming"
+                        ? "bg-amber-50 border-2 border-amber-400"
                         : "bg-white border border-gray-200"
                     }`}
                   >
                     <div className="flex items-center gap-3 mb-3">
                       <span
                         className={`text-2xl font-bold ${
-                          item.status === "upcoming" ? "text-green-600" : "text-gray-400"
+                          item.status === "active" ? "text-green-600" : item.status === "upcoming" ? "text-amber-600" : "text-gray-400"
                         }`}
                       >
                         {item.year}
                       </span>
-                      {item.status === "upcoming" && (
+                      {item.status === "active" && (
                         <span className="px-2 py-1 bg-green-600 text-white text-xs font-medium rounded">
-                          STARTING SOON
+                          NOW ACTIVE
+                        </span>
+                      )}
+                      {item.status === "upcoming" && (
+                        <span className="px-2 py-1 bg-amber-500 text-white text-xs font-medium rounded">
+                          NEXT TARGET
                         </span>
                       )}
                     </div>
@@ -94,9 +101,11 @@ export default function Market() {
                 </div>
 
                 {/* Circle */}
-                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-white border-4 border-green-500 rounded-full items-center justify-center">
-                  {item.status === "upcoming" ? (
-                    <TrendingUp className="w-5 h-5 text-green-600" />
+                <div className={`hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-white border-4 ${item.status === "active" ? "border-green-500" : item.status === "upcoming" ? "border-amber-400" : "border-gray-300"} rounded-full items-center justify-center`}>
+                  {item.status === "active" ? (
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                  ) : item.status === "upcoming" ? (
+                    <TrendingUp className="w-5 h-5 text-amber-500" />
                   ) : (
                     <Calendar className="w-5 h-5 text-gray-400" />
                   )}
