@@ -63,7 +63,11 @@ export default function Footer() {
                   info@methanol.green
                 </a>
               </li>
-              <li>Milan, Italy</li>
+              <li>
+                <a href="tel:+390287369700" className="hover:text-green-500 transition-colors">
+                  +39 02 8736 9700
+                </a>
+              </li>
             </ul>
           </div>
         </div>

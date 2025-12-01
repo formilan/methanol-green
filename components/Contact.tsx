@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Send, CheckCircle, Leaf } from "lucide-react";
+import { Mail, Phone, Send, CheckCircle, Leaf } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -66,15 +66,18 @@ export default function Contact() {
                   </div>
                 </a>
 
-                <div className="flex items-center gap-4 text-gray-600">
+                <a
+                  href="tel:+390287369700"
+                  className="flex items-center gap-4 text-gray-600 hover:text-green-600 transition-colors"
+                >
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-green-600" />
+                    <Phone className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
-                    <div className="text-sm text-gray-500">Location</div>
-                    <div className="font-medium">Milan, Italy</div>
+                    <div className="text-sm text-gray-500">Phone</div>
+                    <div className="font-medium">+39 02 8736 9700</div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 
